@@ -1,0 +1,200 @@
+/* kay.css */
+
+:root {
+    --primary-color: #174a85; /* Dark Blue */
+    --secondary-color: #558eaf; /* Gray */
+    --accent-color: #007bff; /* Accent Color */
+    --white: #fff;
+    --black: #000;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    color: var(--black);
+}
+
+.page {
+    display: none;
+    padding: 20px;
+    border: 1px solid var(--secondary-color);
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.product, .cart {
+    width: calc(33% - 20px);
+    text-align: center;
+    border: 1px solid var(--secondary-color);
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: var(--white);
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.product:hover, .cart:hover {
+    transform: scale(1.05);
+}
+
+.cart {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cart-item {
+    margin-bottom: 5px;
+    padding: 5px;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 20px 10px;
+    color: var(--white);
+    text-align: center;
+    position: relative;
+}
+
+.logo img {
+    max-width: 100px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--accent-color);
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+button {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: darken(var(--accent-color), 10%);
+}
+
+.address-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 10px;
+}
+
+#contactResponse {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+#loginPage, #createUserPage {
+    display: none;
+    padding: 20px;
+    border: 1px solid var(--secondary-color);
+    margin: 20px auto;
+    max-width: 400px; /* Reduced width for better centering */
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text and elements */
+}
+
+#loginPage input, #createUserPage input {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 300px;
+}
+
+#loginPage button, #createUserPage button {
+    display: block;
+    margin: 20px auto 0; /* Push button down */
+}
+#homePage {
+    display: none;
+    padding: 20px;
+    border: 1px solid var(--secondary-color);
+    margin: 20px auto;
+    max-width: 800px; /* Reduced width for better centering */
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text and elements */
+}
+
+.home-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+}

@@ -1,0 +1,154 @@
+<!-- Mark by kay-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to kay School</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpeg" alt="kay School Logo">
+        </div>
+        <h1>Welcome to kay training School</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showPage('createUserPage')">Create User</a></li>
+                <li><a href="#" onclick="showPage('loginPage')">Login</a></li>
+                <li id="shoppingLink" style="display: none;"><a href="#" onclick="showPage('shoppingPage')">Shopping</a></li>
+                <li><a href="#" onclick="showPage('aboutPage')">About Us</a></li>
+                <li><a href="#" onclick="showPage('projectsPage')">Projects</a></li>
+                <li><a href="#" onclick="showPage('contactPage')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- CreateUser Page -->
+        <div id="createUserPage" class="page">
+            <h2>Create User</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="createUser()">Create User</button>
+        </div>
+
+        <!-- LoginPage -->
+        <div id="loginPage" class="page">
+            <h2>Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+        </div>
+
+        <!-- ShoppingPage -->
+        <div id="shoppingPage" class="page">
+            <h2>Shopping Page</h2>
+            <section>
+                <h3>hot course</h3>
+                <div class="container">
+                    <div class="product">
+                        <h4>Data Analytics & Big Data</h4>
+                        <p>Price: $120</p>
+                        <p>Learn data mining, analytics tools (like Excel, Power BI, Tableau), programming languages</p>
+                        <input type="number" id="courseQuantity1" placeholder="Quantity" min="1">
+                        <button onclick="addToCart('Advanced Python Programming', 120, document.getElementById('courseQuantity1').value)">Add to Cart</button>
+                    </div>
+                    <div class="product">
+                        <h4>Mobile App Development</h4>
+                        <p>Price: $180</p>
+                        <p>Learn Android and iOS application development, mastering development environments and tools (e.g., Android Studio, Xcode)</p>
+                        <input type="number" id="courseQuantity2" placeholder="Quantity" min="1">
+                        <button onclick="addToCart('Full Stack Web Development', 180, document.getElementById('courseQuantity2').value)">Add to Cart</button>
+                    </div>
+                    <div class="product">
+                        <h4>Artificial Intelligence & Machine Learning</h4>
+                        <p>Price: $250</p>
+                        <p> Learn AI algorithms, machine learning models, deep learning, neural networks, and more.</p>
+                        <input type="number" id="courseQuantity3" placeholder="Quantity" min="1">
+                        <button onclick="addToCart('Data Science and Machine Learning', 250, document.getElementById('courseQuantity3').value)">Add to Cart</button>
+                    </div>
+                </div> 
+                
+                <h3>new course</h3>
+                <div class="container">
+                    <div class="product">
+                        <h4>Blockchain Technology</h4>
+                        <p>Price: $15.00</p>
+                        <p>Learn how blockchain works, smart contracts, cryptocurrencies, decentralized applications (DApps), etc. </p>
+                        <input type="number" id="resourceQuantity1" placeholder="Quantity" min="1">
+                        <button onclick="addToCart('Python Data Analysis', 15, document.getElementById('resourceQuantity1').value)">Add to Cart</button>
+                    </div>
+                    <div class="product">
+                        <h4> IT Project Management</h4>
+                        <p>Price: $25.00</p>
+                        <p>Learn the principles, processes, and tools for project management, with a focus on Agile project management, Scrum framework, and PMI standards.</p>
+                        <input type="number" id="resourceQuantity2" placeholder="Quantity" min="1">
+                        <button onclick="addToCart('Front-End Development Tools', 25, document.getElementById('resourceQuantity2').value)">Add to Cart</button>
+                    </div>
+                    <div class="product">
+                        <h4>Web Development </h4>
+                        <p>Price: $35.00</p>
+                        <p>Front-end development includes HTML, CSS, JavaScript, and modern frameworks (React, Angular);</p>
+                        <input type="number" id="resourceQuantity3" placeholder="Quantity" min="1">
+                        <button onclick="addToCart('Data Visualization Essentials', 35, document.getElementById('resourceQuantity3').value)">Add to Cart</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cart">
+                <h2>Shopping Cart</h2>
+                <div id="cart-items"></div>
+                <p>Total: $<span id="total-price">0</span></p>
+                <button onclick="checkout()">Checkout</button>
+            </section>
+        </div>
+
+        <!-- AboutPage -->
+        <div id="aboutPage" class="page">
+            <h2>About Us</h2>
+            <p>Welcome to kay School, a leading provider of innovative, industry-relevant training solutions designed to help individuals achieve their professional goals. As a registered training organization , we are committed to delivering high-quality vocational education and training (VET) that meets the needs of both students and employers. Our courses are carefully designed to equip learners with the practical skills, knowledge, and certifications required to succeed in today’s competitive job market.
+            </p>
+            <p>At kay School, we believe in a student-centered approach to learning, offering flexible, accessible, and engaging programs that cater to different learning styles. Whether you are starting your career, looking to upskill, or seeking to transition into a new industry, our expert trainers and cutting-edge resources will support you every step of the way.</p>
+            <p><strong>School motto:</strong> "Knowledge, Integrity, Excellence"</p>
+            <p>We offer a diverse range of accredited courses in high-demand fields such as IT, business, healthcare, construction, and more. All our programs are delivered in alignment with industry standards, ensuring that graduates are well-prepared for real-world challenges and have the qualifications to enhance their employability.   
+                Our mission is simple: to empower our students to achieve their full potential and contribute positively to their communities and industries. Join us at kay and take the next step towards your bright future.</p>
+        </div>
+
+        <!-- ProjectsPage -->
+        <div id="projectsPage" class="page">
+            <h2>Student Projects</h2>
+            <div class="container">
+                <div class="project">
+                    <h4>Project 1: E-Commerce Website</h4>
+                    <p>Description: A fully functional e-commerce website built using HTML, CSS, and JavaScript.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ContactPage -->
+        <div id="contactPage" class="page">
+            <h2>Contact Us</h2>
+            <p>If you have any questions, comments, or feedback, please reach out to us using the form below:</p>
+            <form id="contactForm">
+                <label for="contactName">Name:</label>
+                <input type="text" id="contactName" placeholder="Your Name" required>
+                <label for="contactEmail">Email:</label>
+                <input type="email" id="contactEmail" placeholder="Your Email" required>
+                <label for="contactMessage">Message:</label>
+                <textarea id="contactMessage" placeholder="Your Message" required></textarea>
+                <button type="submit" onclick="submitContactForm(event)">Send Message</button>
+            </form>
+            <p id="contactResponse" style="display: none;"></p>
+        </div>
+    </main>
+    <img src="bg.jpg" alt="clsrm" style="width: 100%; height: auto;">
+    <footer>
+        <p>&copy; 2024 kay School</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
